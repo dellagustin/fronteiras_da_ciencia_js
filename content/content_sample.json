@@ -1,0 +1,28 @@
+{
+  "episodes": [
+    {
+	  "number": "189",
+	  "seasonNumber": "5",
+	  "seasonEpisodeNumber": "36",
+	  "publicationDate": "2014-11-10",
+	  "title": "EyeNetra, de olho no celular",
+	  "audioFile": "Fronteiras_da_Ciencia-T05E36-Eyenetra-10.11.2014.mp3",
+	  "imageFile": "Eye-exam.jpg",
+	  "lenghtInBytes": "20000000",
+	  "guidOverride": "",
+	  "description": "Neste programa o Dr. Vitor Pamplona, Cientista da Computação, Fundador e Diretor Técnico da Eyenetra, discute com Marco Idiart (IF-UFRGS) os desafios científicos do uso de tecnologias embarcadas em celulares para diagnóstico médico. Em particular, explica como sua empresa a Eyenetra está desenvolvendo produtos para medidas oftalmológicas."
+	},
+	{
+	  "number": "188",
+	  "seasonNumber": "5",
+	  "seasonEpisodeNumber": "35",
+	  "publicationDate": "2014-11-03",
+	  "title": "Dinossauros com penas!",
+	  "audioFile": "Fronteiras_da_Ciencia-T05E35-Dinogallus-03.11.2014.mp3",
+	  "imageFile": "dinogallus2.jpg",
+	  "lenghtInBytes": "20000000",
+	  "guidOverride": "",
+	  "description": "Episódio 35 (2014). Jeferson Arenzon (IF-UFRGS) e Jorge Quillfeldt (Biofísica-UFRGS) conversam com Marina Bento Soares (Paleonto-UFRGS) sobre as recentes descobertas de dinossauros com penas (dinogallus, \"galinhas terríveis\")."
+	}
+  ]
+}

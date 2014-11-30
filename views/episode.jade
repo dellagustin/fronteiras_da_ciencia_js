@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  .Episode
+    h1 #{episode.number} - #{episode.title}
+    p#Season Temporada #{episode.seasonNumber}, Episódio #{episode.seasonEpisodeNumber}
+    if episode.imageUrl
+      | <img src=!{episode.imageUrl}>
+    p#Description #{episode.description}
+    | <a href=!{episode.downloadLink}> Download</a> 
+  #disqus_thread    
+  script(type="text/javascript").
+    var disqus_identifier = #{episode.disqusID};
+  script(type="text/javascript" src='/javascripts/disqus_comments.js')
+  noscript Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>

@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  h1 Lista de Episódios
+  each episode in episodes
+    .Episode
+      h2 
+        | <a href=!{episode.linkToArticle}>!{episode.number} - !{episode.title}</a>
+      p#Season Temporada #{episode.seasonNumber}, Episódio #{episode.seasonEpisodeNumber}
+      if episode.imageUrl
+        | <img src=!{episode.imageUrl}>
+      p#Description #{episode.description}
+    .Episode_spacer
+     
+  
+  
+  

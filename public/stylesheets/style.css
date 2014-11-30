@@ -1,0 +1,47 @@
+body {
+  padding-left: 50px;
+  padding-right: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+#page_title {
+	top: 0px;
+	color: white;
+	background-color: black;
+}
+
+#menu {
+	background-color: black;
+}
+
+.menuitem {
+	/*float: left;*/
+	margin: 3px;
+	padding: 3px;
+	border-radius: 3px;
+	background-color: white;
+}
+
+.menuitem a {
+	text-decoration: none;
+	color: black;
+}
+
+.menuitem:hover {
+	background-color: #DCCEC0;
+}
+
+.Episode {
+	border-radius: 5px;
+	padding: 20px;
+	background-color: #F5E9D2;
+}
+
+.Episode_spacer {
+	height: 10px;
+	background-color: inherit;
+}

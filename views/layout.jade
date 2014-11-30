@@ -1,0 +1,26 @@
+doctype html
+html
+  head
+    if title
+      title= title
+    else
+      title Fronteiras da Ciência
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    #page_header
+      #page_title
+        h1 Fronteiras da Ciência
+      #menu
+        table
+          tr
+            td.menuitem
+              a(href='/') Início
+            td.menuitem
+              a(href='http://www.if.ufrgs.br/~arenzon/fronteirasdaciencia.xml') RSS
+            td.menuitem
+              a(href='mailto:frontdaciencia@ufrgs.br') Email
+            td.menuitem
+              a(href='https://github.com/dellagustin/fronteiras_da_ciencia_js') Git Hub
+    block content
+    script(src='http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js')
+    script(src='/javascripts/globals.js')
