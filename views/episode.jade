@@ -1,15 +1,18 @@
-extends layout
+﻿extends layout
 
 block content
+  .Episode_spacer
   .Episode
     h1 #{episode.number} - #{episode.title}
-    p#Season Temporada #{episode.seasonNumber}, Epis�dio #{episode.seasonEpisodeNumber}
+    h3#Season Temporada #{episode.seasonNumber}, Episódio #{episode.seasonEpisodeNumber}
     if episode.imageUrl
       | <img src=!{episode.imageUrl}>
     p#Description #{episode.description}
-    | <a href=!{episode.downloadLink}> Download</a> 
+    | <strong><a href=!{episode.downloadLink} title="Clique com o botão direito e 'Salvar link como...' para baixar">Ouvir/Download</a></strong>
+    br
+    | <script type='text/javascript' src=!{episode.downloadCounterLink}></script>
+    | <strong><script type='text/javascript'>document.write(dsCounter);</script> Downloads</strong> 
   #disqus_thread    
   script(type="text/javascript").
     var disqus_identifier = #{episode.disqusID};
-  script(type="text/javascript" src='/javascripts/disqus_comments.js')
   noscript Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>

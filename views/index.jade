@@ -1,15 +1,19 @@
-extends layout
+﻿extends layout
 
 block content
-  h1 Lista de Epis�dios
+  h1 Lista de Episódios
   each episode in episodes
     .Episode
       h2 
-        | <a href=!{episode.linkToArticle}>!{episode.number} - !{episode.title}</a>
-      p#Season Temporada #{episode.seasonNumber}, Epis�dio #{episode.seasonEpisodeNumber}
+        | <a class="linkToArticle" href=!{episode.linkToArticle}>!{episode.number} - !{episode.title}</a>
+      h3#Season Temporada #{episode.seasonNumber}, Episódio #{episode.seasonEpisodeNumber}
       if episode.imageUrl
-        | <img src=!{episode.imageUrl}>
+        | <img class="episodeImage" src=!{episode.imageUrl}>
       p#Description #{episode.description}
+      | <strong><span class="disqus-comment-count" data-disqus-identifier=!{episode.disqusID}>Comentários</span></strong>
+      br
+      | <script type='text/javascript' src=!{episode.downloadCounterLink}></script>
+      | <strong><script type='text/javascript'>document.write(dsCounter);</script> Downloads</strong>
     .Episode_spacer
      
   

@@ -29,6 +29,7 @@ router.get('/episode/:episodeNumber', function(req, res) {
 
 /* GET home page. */
 router.get('/', function(req, res) {
+
 	var content = require('../content/content.json');
 	
 	content.episodes.sort( function(a, b) {
@@ -38,6 +39,8 @@ router.get('/', function(req, res) {
 	content.episodes.forEach(function(item) {
 		item.imageUrl = item.imageFile ? 'http://www.ufrgs.br/frontdaciencia/imagens/' + item.imageFile : false;
 		item.linkToArticle = 'episode/' + item.number;
+		item.downloadCounterLink = 'http://dstats.net/dstatsjs.php?file=http://www6.ufrgs.br/frontdaciencia/arquivos/' + item.audioFile;
+		item.disqusID = '\'Episode_' + item.number + '\'';
 	});
 	
 	console.log(content.episodes);
