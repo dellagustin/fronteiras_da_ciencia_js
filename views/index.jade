@@ -1,19 +1,25 @@
-﻿extends layout
+extends layout
 
 block content
   h1 Lista de Episódios
   each episode in episodes
     .Episode
-      h2 
-        | <a class="linkToArticle" href=!{episode.linkToArticle}>!{episode.number} - !{episode.title}</a>
-      h3#Season Temporada #{episode.seasonNumber}, Episódio #{episode.seasonEpisodeNumber}
-      if episode.imageUrl
-        | <img class="episodeImage" src=!{episode.imageUrl}>
-      p#Description #{episode.description}
-      | <strong><span class="disqus-comment-count" data-disqus-identifier=!{episode.disqusID}>Comentários</span></strong>
-      br
-      | <script type='text/javascript' src=!{episode.downloadCounterLink}></script>
-      | <strong><script type='text/javascript'>document.write(dsCounter);</script> Downloads</strong>
+      table
+        tr
+          td
+            h2 
+              // | <a class="linkToArticle" href=!{episode.linkToArticle}>!{episode.number} - !{episode.title}</a>
+              | !{episode.number} - !{episode.title}
+            h3#Season Temporada #{episode.seasonNumber}, Episódio #{episode.seasonEpisodeNumber}
+            p#Description #{episode.description}
+            | <script type='text/javascript' src=!{episode.downloadCounterLink}></script>
+            | <strong><a href=!{episode.downloadLink} title="Clique com o botão direito e 'Salvar link como...' para baixar">Ouvir / Baixar</a> - Baixado <script type='text/javascript'>document.write(dsCounter);</script> vezes</strong>
+            br
+            //| <strong><span class="disqus-comment-count" data-disqus-identifier=!{episode.disqusID}>Comentários</span></strong>
+            | <strong><a class="linkToArticle" href=!{episode.linkToArticle}#disqus_thread data-disqus-identifier=!{episode.disqusID}>Comentários</a></strong>
+          td
+            if episode.imageUrl
+              | <img class="episodeImage" src=!{episode.imageUrl}>
     .Episode_spacer
      
   

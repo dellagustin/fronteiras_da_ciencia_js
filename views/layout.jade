@@ -1,4 +1,4 @@
-﻿doctype html
+doctype html
 html
   head
     if title
@@ -8,9 +8,20 @@ html
     link(rel='stylesheet', href='/stylesheets/style.css')
   body
     #page_header
-      #page_title
+      #menu.header_and_footer_bg
+        table
+          tr
+            td.menuitem
+              a(href='http://www.ufrgs.br/') UFRGS
+            td.menuitem
+              a(href='http://www.ufrgs.br/radio') Radio da Universidade
+            td.menuitem
+              a(href='http://www.if.ufrgs.br/if/') Intituto de Física
+            td.menuitem
+              a(href='http://www.ufrgs.br/frontdaciencia/') Fronteiras da Ciência (original)
+      #page_title.header_and_footer_bg
         h1 Fronteiras da Ciência
-      #menu
+      #menu.header_and_footer_bg
         table
           tr
             td.menuitem
@@ -18,10 +29,47 @@ html
             td.menuitem
               a(href='http://www.if.ufrgs.br/~arenzon/fronteirasdaciencia.xml') RSS
             td.menuitem
+              a(href='http://www.facebook.com/frontdaciencia') Facebook
+            td.menuitem
+              a(href='http://twitter.com/acidocetico') Twitter
+            td.menuitem
               a(href='mailto:frontdaciencia@ufrgs.br') Email
             td.menuitem
               a(href='https://github.com/dellagustin/fronteiras_da_ciencia_js') Git Hub
-    block content
-    script(src='http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js')
+            td.menuitem
+              a(href='/') Sobre
+    .spacer
+    #mid_section
+      #side_links
+        h3.side_links_title.side_links_text Temporadas
+        ul.side_links_list
+          li.side_links_text 
+            a(href='/') Temporada 5 (2014)
+          li.side_links_text 
+            a(href='/') Temporada 4 (2013)
+          li.side_links_text 
+            a(href='/') Temporada 3 (2012)
+          li.side_links_text 
+            a(href='/') Temporada 2 (2011)
+          li.side_links_text 
+            a(href='/') Temporada 1 (2010)
+        h3.side_links_title.side_links_text No rádio
+        ul.side_links_list
+          li.side_links_text 
+            a(href='http://www.ufrgs.br/radio') Rádio da Universidade
+          li.side_links_text 
+            a(href='/') Cultura FM Amparo  
+          li.side_links_text
+            a(href='/') Morabeza 90.7
+          li.side_links_text 
+            a(href='/') Retransmita
+      #content_wrapper
+        block content
+    .spacer 
+    //
+      #page_footer.header_and_footer_bg
+    //
+      script(src='http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js')
     script(src='/javascripts/disqus_comments.js')
-    script(src='/javascripts/globals.js')
+    //
+      script(src='/javascripts/globals.js')

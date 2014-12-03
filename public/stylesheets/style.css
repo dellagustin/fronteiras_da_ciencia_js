@@ -1,6 +1,6 @@
 body {
-  padding-left: 50px;
-  padding-right: 50px;
+  width: 1000px;
+  margin: 0px auto;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
@@ -13,11 +13,19 @@ a:hover {
 	text-decoration: underline;
 }
 
+.header_and_footer_bg {
+	background-color: black;
+}
+
+.spacer {
+	height: 10px;
+}
+
 #page_title {
+	margin-top: 5px;
 	margin-bottom: 5px;
 	padding: 20px;
 	color: white;
-	background-color: black;
 }
 
 #page_title h1 {
@@ -25,9 +33,12 @@ a:hover {
 }
 
 #menu {
-	background-color: black;
 	padding: 5px;
 	padding-left: 20px;
+}
+
+#page_footer {
+	height: 40px;
 }
 
 .menuitem {
@@ -35,7 +46,6 @@ a:hover {
 	padding: 3px;
 	padding-left: 10px;
 	padding-right: 10px;
-	/*border-radius: 3px;*/
 	background-color: black;
 	border-right-width: 1px;
 	border-right-style: solid;
@@ -43,16 +53,68 @@ a:hover {
 }
 
 .menuitem a {
-	text-decoration: none;
+	/*text-decoration: none;*/
 	color: white;
 }
 
+/*
 .menuitem:hover {
 	background-color: #F5E9D2;
 }
 
 .menuitem a:hover {
 	color: black;
+}
+*/
+
+#mid_section {
+  width: 100%;
+  overflow: auto;
+}
+
+#mid_section tr td {
+	height: 100%;
+}
+
+#content_wrapper {
+  width: 800px;
+}
+
+#side_links {
+	float: right;
+	width: 190px;
+	min-height: 300px;
+	
+	border-top-color: whitesmoke;
+	border-top-style: solid;
+	border-top-width: 1px;
+}
+
+.side_links_text {
+	color: gray;
+}
+
+.side_links_title {
+	padding-left: 20px;
+	margin-bottom: 5px;
+}
+
+.side_links_list {
+	list-style-type: none;
+	margin-top: 5px;
+  margin-bottom: 5px;
+  padding-bottom: 10px;
+  border-bottom-color: whitesmoke;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+}
+
+.side_links_list li {
+  padding-bottom: 2px;	
+}
+
+.side_links_list li a {
+  color: gray;
 }
 
 .Episode {
@@ -66,6 +128,8 @@ a:hover {
 	background-color: inherit;
 }
 
+/*
 .episodeImage {
 	border-radius: 10px;
 }
+*/
