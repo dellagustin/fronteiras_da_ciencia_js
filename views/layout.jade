@@ -7,7 +7,11 @@ html
       title Fronteiras da Ciência
     link(rel='stylesheet', href='/stylesheets/style.css')
   body
+    #fb-root
     #page_header
+      //
+        #front_logo
+          img(src="http://frontdaciencia.ufrgs.br/Fronteiras.da.Ciencia.jpg")
       #menu.header_and_footer_bg
         table
           tr
@@ -22,6 +26,14 @@ html
       #page_title.header_and_footer_bg
         h1 Fronteiras da Ciência
       #menu.header_and_footer_bg
+        #menu_social
+          ul.social_buttons
+            li 
+              | <div class="fb-like" data-href="https://www.facebook.com/frontdaciencia" data-layout="button_count" data-action="like" data-share="true"></div>
+            li 
+              | <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://frontdaciencia.ufrgs.br/" data-via="acidocetico" data-lang="pt">Tweetar</a>
+            li.google_plus_button
+              | <div class="g-plusone" data-size="medium" annotation="bubble" data-width="300" data-href="http://frontdaciencia.ufrgs.br/"></div>
         table
           tr
             td.menuitem
@@ -38,6 +50,8 @@ html
               a(href='https://github.com/dellagustin/fronteiras_da_ciencia_js') Git Hub
             td.menuitem
               a(href='/') Sobre
+            // td.last_menuitem
+              
     .spacer
     #mid_section
       #side_links
@@ -58,7 +72,7 @@ html
           li.side_links_text 
             a(href='http://www.ufrgs.br/radio') Rádio da Universidade
           li.side_links_text 
-            a(href='/') Cultura FM Amparo  
+            a(href='/') Cultura FM Amparo
           li.side_links_text
             a(href='/') Morabeza 90.7
           li.side_links_text 
@@ -66,10 +80,11 @@ html
       #content_wrapper
         block content
     .spacer 
-    //
-      #page_footer.header_and_footer_bg
-    //
-      script(src='http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js')
+    // #page_footer.header_and_footer_bg
+    // script(src='http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js')
     script(src='/javascripts/disqus_comments.js')
-    //
-      script(src='/javascripts/globals.js')
+    script(src='/javascripts/facebook.js')
+    script(src='/javascripts/twitter.js')
+    script(src='/javascripts/google_plus.js')
+    
+    // script(src='/javascripts/globals.js')

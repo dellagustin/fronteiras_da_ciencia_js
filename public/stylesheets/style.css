@@ -37,6 +37,35 @@ a:hover {
 	padding-left: 20px;
 }
 
+#menu_social {
+	float: right;
+}
+
+.social_buttons {
+	padding: 0px;
+	margin: 0px;
+}
+
+.social_buttons li {
+	display: inline;
+}
+
+/* Center twitter buttons */
+.twitter-share-button {
+	position: relative;
+	top: 3px;
+	/*This is so that the button does not leave too much blank.
+	it is a problem though, as it will get chopped if we have more
+	than 999 shares*/
+	width: 101px !important;
+}
+
+/* Center g+ buttons */
+.google_plus_button {
+	position: relative;
+	top: 3px;
+}
+
 #page_footer {
 	height: 40px;
 }
@@ -53,19 +82,8 @@ a:hover {
 }
 
 .menuitem a {
-	/*text-decoration: none;*/
 	color: white;
 }
-
-/*
-.menuitem:hover {
-	background-color: #F5E9D2;
-}
-
-.menuitem a:hover {
-	color: black;
-}
-*/
 
 #mid_section {
   width: 100%;
