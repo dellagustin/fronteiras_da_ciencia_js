@@ -8,22 +8,14 @@ block content
         tr
           td
             h2 
-              // | <a class="linkToArticle" href=!{episode.linkToArticle}>!{episode.number} - !{episode.title}</a>
               | !{episode.number} - !{episode.title}
             h3#Season Temporada #{episode.seasonNumber}, Episódio #{episode.seasonEpisodeNumber}
             p#Description #{episode.description}
             | <script type='text/javascript' src=!{episode.downloadCounterLink}></script>
             | <strong><a href=!{episode.downloadLink} title="Clique com o botão direito e 'Salvar link como...' para baixar">Ouvir / Baixar</a> - Baixado <script type='text/javascript'>document.write(dsCounter);</script> vezes</strong>
             br
-            //| <strong><span class="disqus-comment-count" data-disqus-identifier=!{episode.disqusID}>Comentários</span></strong>
             | <strong><a class="linkToArticle" href=!{episode.linkToArticle}#disqus_thread data-disqus-identifier=!{episode.disqusID}>Comentários</a></strong>
-            ul.social_buttons
-              li 
-                | <div class="fb-like" data-href="!{episode.linkToArticle}" data-layout="button_count" data-action="like" data-share="true"></div>
-              li 
-                | <a href="https://twitter.com/share" class="twitter-share-button" data-url="!{episode.linkToArticle}" data-via="acidocetico" data-lang="pt">Tweetar</a>
-              li.google_plus_button
-                | <div class="g-plusone" data-size="medium" annotation="bubble" data-width="300" data-href="!{episode.linkToArticle}"></div>                
+            include ./includes/social_buttons_episode.jade
           td
             if episode.imageUrl
               | <img class="episodeImage" src=!{episode.imageUrl}>

@@ -9,11 +9,7 @@ block content
     p#Description #{episode.description}
     | <script type='text/javascript' src=!{episode.downloadCounterLink}></script>
     | <strong><a href=!{episode.downloadLink} title="Clique com o botão direito e 'Salvar link como...' para baixar">Ouvir / Baixar</a> - Baixado <script type='text/javascript'>document.write(dsCounter);</script> vezes</strong>
-    ul.social_buttons
-      li 
-        | <div class="fb-like" data-href="!{episode.linkToArticle}" data-layout="button_count" data-action="like" data-share="true"></div>
-      li 
-        | <a href="https://twitter.com/share" class="twitter-share-button" data-url="!{episode.linkToArticle}" data-via="acidocetico" data-lang="pt">Tweetar</a>
+    include ./includes/social_buttons_episode.jade
   #disqus_thread    
   script(type="text/javascript").
     var disqus_identifier = #{episode.disqusID};
