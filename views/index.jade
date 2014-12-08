@@ -7,18 +7,21 @@ block content
       table
         tr
           td
-            h2 
-              | !{episode.number} - !{episode.title}
+            h2
+              a.link_to_episode(href=episode.linkToArticle)
+                | !{episode.number} - !{episode.title}
             h3#Season Temporada #{episode.seasonNumber}, Episódio #{episode.seasonEpisodeNumber}
             p#Description #{episode.description}
             | <script type='text/javascript' src=!{episode.downloadCounterLink}></script>
             | <strong><a href=!{episode.downloadLink} title="Clique com o botão direito e 'Salvar link como...' para baixar">Ouvir / Baixar</a> - Baixado <script type='text/javascript'>document.write(dsCounter);</script> vezes</strong>
             br
             | <strong><a class="linkToArticle" href=!{episode.linkToArticle}#disqus_thread data-disqus-identifier=!{episode.disqusID}>Comentários</a></strong>
-            include ./includes/social_buttons_episode.jade
+            // Social buttons are consuming too much memory and increasing the page load time.
+            //
+              include ./includes/social_buttons_episode.jade
           td
             if episode.imageUrl
-              | <img class="episodeImage" src=!{episode.imageUrl}>
+              img.episodeImage(src=episode.imageUrl)
     .Episode_spacer
      
   
