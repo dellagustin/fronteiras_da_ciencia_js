@@ -157,6 +157,11 @@ a:hover {
 	background-color: inherit;
 }
 
+
+.link_to_episode {
+	color: black;
+}
+
 /*
 .episodeImage {
 	border-radius: 10px;
