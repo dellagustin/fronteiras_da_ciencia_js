@@ -10,7 +10,7 @@ router.get('/episode/:episodeNumber', function(req, res) {
 	var episode;
 	
 	content.episodes.forEach(function(item) {
-	    if(item.number === episodeNumber) {
+	    if(item.number + '' === episodeNumber + '') {
 	    	episode = item;
 	    }
 	});
