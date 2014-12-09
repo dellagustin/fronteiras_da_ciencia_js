@@ -7,9 +7,9 @@ block content
     if episode.imageUrl
       img(src=episode.imageUrl)
     p#Description #{episode.description}
-    | <script type='text/javascript' src=!{episode.downloadCounterLink}></script>
-    | <strong><a href=!{episode.downloadLink} title="Clique com o botão direito e 'Salvar link como...' para baixar">Ouvir / Baixar</a> - Baixado <script type='text/javascript'>document.write(dsCounter);</script> vezes</strong>
+    include ./includes/link_to_audio_file.jade
     include ./includes/social_buttons_episode.jade
+  // Create the Disqus section for comments 
   #disqus_thread    
   script(type="text/javascript").
     var disqus_identifier = #{episode.disqusID};

@@ -1,0 +1,8 @@
+// Create a link to the audio file of the podcast
+// plus number of downloads
+if episode.downloadLink
+  // Download script with variables containing counter information 
+  script(type='text/javascript',src=episode.downloadCounterLink)
+  strong
+    a(href=episode.downloadLink,title="Clique com o botão direito e 'Salvar link como...' para baixar") Ouvir / Baixar
+    span - Baixado <script type='text/javascript'>document.write(dsCounter);</script> vezes

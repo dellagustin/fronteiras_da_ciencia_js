@@ -12,14 +12,12 @@ block content
                 | !{episode.number} - !{episode.title}
             h3#Season Temporada #{episode.seasonNumber}, Episódio #{episode.seasonEpisodeNumber}
             p#Description #{episode.description}
-            if episode.downloadLink
-              | <script type='text/javascript' src=!{episode.downloadCounterLink}></script>
-              | <strong><a href=!{episode.downloadLink} title="Clique com o botão direito e 'Salvar link como...' para baixar">Ouvir / Baixar</a> - Baixado <script type='text/javascript'>document.write(dsCounter);</script> vezes</strong>
+            include ./includes/link_to_audio_file.jade
             br
+            // Number of Disqus comments to the article
             | <strong><a class="linkToArticle" href=!{episode.linkToArticle}#disqus_thread data-disqus-identifier=!{episode.disqusID}>Nenhum comentário</a></strong>
             // Social buttons are consuming too much memory and increasing the page load time.
-            //
-              include ./includes/social_buttons_episode.jade
+            // include ./includes/social_buttons_episode.jade
           td
             if episode.imageUrl
               img.episodeImage(src=episode.imageUrl)
