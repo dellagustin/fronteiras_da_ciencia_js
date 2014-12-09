@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 function prepareEpisode(episode) {
+	episode.downloadLink = 'http://dstats.net/download/http://www6.ufrgs.br/frontdaciencia/arquivos/' + episode.audioFile;
 	episode.imageUrl = episode.imageFile ? 'http://www.ufrgs.br/frontdaciencia/imagens/' + episode.imageFile : false;
 	episode.linkToArticle = '/episode/' + episode.number;
 	episode.downloadCounterLink = 'http://dstats.net/dstatsjs.php?file=http://www6.ufrgs.br/frontdaciencia/arquivos/' + episode.audioFile;
