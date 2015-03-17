@@ -6,6 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
+var feedToContent = require('./tools/feed_to_content');
 var app = express();
 
 // view engine setup
@@ -36,9 +37,9 @@ app.use(function(req, res, next) {
 if (app.get('env') === 'development') {
     app.use(function(err, req, res, next) {
         res.status(err.status || 500);
-        
+
         console.log(err);
-        
+
         res.render('error', {
             message: err.message,
             error: err
@@ -50,12 +51,21 @@ if (app.get('env') === 'development') {
 // no stacktraces leaked to user
 app.use(function(err, req, res, next) {
     res.status(err.status || 500);
-    
+
     res.render('error', {
         message: err.message,
         error: {}
     });
 });
+
+feedToContent.downloadContent(function(){});
+
+// every 12 hours
+setInterval(function(){
+  feedToContent.downloadContent(function(){
+    routes.updateContent( );
+  });
+}, 12*60*60*1000);
 
 
 module.exports = app;

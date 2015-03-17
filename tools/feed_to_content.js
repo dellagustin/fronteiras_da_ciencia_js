@@ -3,15 +3,13 @@
  */
 
 var fs = require('fs');
-// var http = require('http');
+var http = require('http');
 var parseString = require('xml2js').parseString;
 
 var options = {
 	host: 'www.if.ufrgs.br',
 	path: '/~arenzon/fronteirasdaciencia.xml'
 };
-
-var feedXml = '';
 
 var parseCallBack = function (err, result) {
 	var content = {
@@ -50,24 +48,37 @@ var parseCallBack = function (err, result) {
 		episodeCounter++;
 	});
 
-	console.log(JSON.stringify(content));
+	//console.log(JSON.stringify(content));
+
+	fs.writeFile('./content/content.json', JSON.stringify(content), function(err) {
+		if(err) {
+			console.log('Error writing content.');
+		}
+		else {
+			console.log('Content written successfully.');
+		}
+
+	});
 }
 
-callback = function(response) {
-  var feedXml = '';
+var feedXml = '';
 
-  //another chunk of data has been received, so append it to `str`
-  response.on('data', function (chunk) {
-	feedXml += chunk;
-  });
+module.exports.downloadContent = function(callback) {
+	http.request(options, function (response) {
+	  var feedXml = '';
 
-  //the whole response has been recieved, so we just print it out here
-  response.on('end', function () {
-    parseString(feedXml, parseCallBack);
-  });
+	  //another chunk of data has been received, so append it to `str`
+	  response.on('data', function (chunk) {
+			feedXml += chunk;
+	  });
+
+	  //the whole response has been recieved, so we just print it out here
+	  response.on('end', function () {
+	    parseString(feedXml, parseCallBack);
+			callback();
+	  });
+	}).end();
 }
-
-http.request(options, callback).end();
 
 /*
 fs.readFile(__dirname + '/fronteirasdaciencia.xml', function(err, data) {
