@@ -18,9 +18,7 @@ var parseCallBack = function (err, result) {
 		episodes: []
 	};
 	
-    // console.log(JSON.stringify(result.rss.channel[0].item));
-
-	result.rss.channel[0].item.forEach(function(item) {
+    result.rss.channel[0].item.forEach(function(item) {
 	    var episode = {};
 	    
 	    episode.title = item.title[0];
@@ -28,9 +26,6 @@ var parseCallBack = function (err, result) {
 	    episode.audioFile = item.enclosure[0].$.url.substring(72);
 	    
 	    var subGuid = item.guid[0].substring(31);
-	    
-	    // console.log(subGuid.substring(1, 1));
-	    // console.log(subGuid.);
 	    
 	    if(subGuid.substring(1, 2) === 'T') {
 	    	episode.seasonNumber = parseInt(subGuid.substring(2, 4));
@@ -49,6 +44,7 @@ var parseCallBack = function (err, result) {
 	});
 	
 	var episodeCounter = 1;
+	
 	content.episodes.forEach(function(item) {
 		item.number = episodeCounter;
 		episodeCounter++;
@@ -57,11 +53,10 @@ var parseCallBack = function (err, result) {
 	console.log(JSON.stringify(content));
 }
 
-/*
 callback = function(response) {
   var feedXml = '';
 
-  //another chunk of data has been recieved, so append it to `str`
+  //another chunk of data has been received, so append it to `str`
   response.on('data', function (chunk) {
 	feedXml += chunk;
   });
@@ -73,10 +68,8 @@ callback = function(response) {
 }
 
 http.request(options, callback).end();
-*/
 
-// var parser = new xml2js.Parser();
-
+/*
 fs.readFile(__dirname + '/fronteirasdaciencia.xml', function(err, data) {
 	if(data) {
 		parseString(data, parseCallBack);
@@ -85,5 +78,6 @@ fs.readFile(__dirname + '/fronteirasdaciencia.xml', function(err, data) {
 		console.log(err);
 	}
 });
+*/
 
 
