@@ -17,39 +17,39 @@ var parseCallBack = function (err, result) {
 	var content = {
 		episodes: []
 	};
-	
-    result.rss.channel[0].item.forEach(function(item) {
-	    var episode = {};
-	    
-	    episode.title = item.title[0];
-	    episode.description = item.description[0];
-	    episode.audioFile = item.enclosure[0].$.url.substring(72);
-	    
-	    var subGuid = item.guid[0].substring(31);
-	    
-	    if(subGuid.substring(1, 2) === 'T') {
-	    	episode.seasonNumber = parseInt(subGuid.substring(2, 4));
-	    	episode.seasonEpisodeNumber = parseInt(subGuid.substring(5, 7));
-	    }
-	    else {
-	    	episode.seasonNumber = 1;
-	    	episode.seasonEpisodeNumber = parseInt(subGuid.substring(1));
-	    }
-	    
-	    content.episodes.push(episode);
+
+  result.rss.channel[0].item.forEach(function(item) {
+    var episode = {};
+
+    episode.title = item.title[0];
+    episode.description = item.description[0];
+    episode.audioFile = item.enclosure[0].$.url.substring(72);
+
+    var subGuid = item.guid[0].substring(31);
+
+    if(subGuid.substring(1, 2) === 'T') {
+    	episode.seasonNumber = parseInt(subGuid.substring(2, 4));
+    	episode.seasonEpisodeNumber = parseInt(subGuid.substring(5, 7));
+    }
+    else {
+    	episode.seasonNumber = 1;
+    	episode.seasonEpisodeNumber = parseInt(subGuid.substring(1));
+    }
+
+    content.episodes.push(episode);
 	});
-	
+
 	content.episodes.sort(function(a, b) {
 		return (a.seasonNumber*100 + a.seasonEpisodeNumber) - (b.seasonNumber*100 + b.seasonEpisodeNumber);
 	});
-	
+
 	var episodeCounter = 1;
-	
+
 	content.episodes.forEach(function(item) {
 		item.number = episodeCounter;
 		episodeCounter++;
 	});
-	
+
 	console.log(JSON.stringify(content));
 }
 
@@ -79,5 +79,3 @@ fs.readFile(__dirname + '/fronteirasdaciencia.xml', function(err, data) {
 	}
 });
 */
-
-
